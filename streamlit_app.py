@@ -15,5 +15,5 @@ st.text("Let's create a table and a histogram with the random list")
 table = dict()
 for i in range(21):
     table[i] = np.count_nonzero(rl == i)
-st.table({k: v for k, v in sorted(table.items(), reverse=True)})
-st.bar_chart([table[i] for i in range(21)], use_container_width=True, zoom=False)
+st.table(table)
+st.bar_chart([table[i] for i in range(21)])
