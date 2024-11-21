@@ -2,19 +2,16 @@ import streamlit as st
 import numpy as np
 
 
-st.title('Random Number')
-st.text("Let's create a random number with numpy")
-st.code("from numpy import random\nx = random.randint(999)\nprint(f'Random number: {x}')")
-x = np.random.randint(999)
-st.text(f'Random number: {x}')
+st.title('Random Distributions')
+st.text("Let's create a list with random numbers from a binomial distribution with numpy")
 
-st.text("Let's create a random normal dictionary with numpy")
-
-rl = np.random.binomial(20, 0.5, size=999)
-with st.expander("Random normal list"):
+st.code("import numpy as np\nrl = np.random.binomial(20, 0.5, size=1015)")
+rl = np.random.binomial(20, 0.5, size=1015)
+with st.expander("Binomial distribution values"):
     st.text(' '.join(f'{i:02}' for i in rl))
+
 st.text("Let's create a histogram with the random list")
-table = dict()
-for i in range(21):
-    table[i] = np.count_nonzero(rl == i)
+st.code("table = {i: np.count_nonzero(rl == i) for i in range(21)}\nst.bar_chart([table[i] for i in range(21)], use_container_width=True)")
+
+table = {i: np.count_nonzero(rl == i) for i in range(21)}
 st.bar_chart([table[i] for i in range(21)], use_container_width=True)
