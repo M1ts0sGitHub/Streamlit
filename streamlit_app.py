@@ -1,6 +1,6 @@
 import streamlit as st
 import numpy as np
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 
 st.title('Random Number')
 st.text("Let's create a random number with numpy")
@@ -24,8 +24,8 @@ x = [1, 2, 3, 4, 5]
 y = [10, 20, 30, 40, 50]
 
 # Create a plot
-fig, ax = plt.subplots()
-ax.plot(x, y)
+# fig, ax = plt.subplots()00
+# ax.plot(x, y)
 
 # Display the plot in Streamlit
 # st.pyplot(fig)
