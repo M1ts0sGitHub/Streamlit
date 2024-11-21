@@ -11,8 +11,9 @@ st.text(f'Random number: {x}')
 st.text("Let's create a random normal dictionary with numpy")
 
 rl = np.random.binomial(20, 0.5, size=999)
-st.text(' '.join(f'{i:02}' for i in rl))
-st.text("Let's create a table and a histogram with the random list")
+with st.expander("Random normal list"):
+    st.text(' '.join(f'{i:02}' for i in rl))
+st.text("Let's create a histogram with the random list")
 table = dict()
 for i in range(21):
     table[i] = np.count_nonzero(rl == i)
