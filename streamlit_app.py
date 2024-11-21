@@ -6,6 +6,6 @@ st.text('Lets see how many random distributions exist')
 
 
 st.text('Generate Random Number')
-st.code('from numpy import random\n \nx = random.randint(100)\n\nprint(x)')
+st.code("from numpy import random\n \nx = random.randint(100)\n\nprint(f'Random number: {x}')")
 x = random.randint(100)
 st.text(f'Random number: {x}')
