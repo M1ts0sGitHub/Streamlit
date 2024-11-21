@@ -2,4 +2,7 @@ import streamlit as st
 st.title('All kinds of Randomness')
 st.text('Lets see how many random distributions exist')
 
-st.code('for i in range(8): foo()')
+
+
+st.text('Generate Random Number')
+st.code('from numpy import random\n \nx = random.randint(100)\n\nprint(x)')
