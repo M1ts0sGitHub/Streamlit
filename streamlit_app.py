@@ -28,4 +28,4 @@ fig, ax = plt.subplots()
 ax.plot(x, y)
 
 # Display the plot in Streamlit
-st.pyplot(fig)
+# st.pyplot(fig)
