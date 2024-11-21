@@ -11,5 +11,10 @@ st.text("Let's create a random normal dictionary with numpy")
 
 rl = np.random.binomial(20, 0.5, size=100)
 st.text(f'Random number: {rl}')
-#make a bar chart
-st.bar_chart(np.unique(rl, return_counts=True)[2], use_container_width=True)
+st.text("Let's create a table and a histogram with the random list")
+table = dict()
+for i in range(21):
+    table[i] = np.count_nonzero(rl == i)
+
+st.table(table)
+st.bar_chart([table[i] for i in range(21)])
