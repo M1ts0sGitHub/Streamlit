@@ -9,5 +9,5 @@ st.text(f'Random number: {x}')
 
 st.text("Let's create a random normal dictionary with numpy")
 
-rl = random.normal(loc=0, scale=1, size=1000)
+rl = random.normal(20, 0.5, size=100)
 st.text(f'Random number: {rl}')  
