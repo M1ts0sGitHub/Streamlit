@@ -7,7 +7,7 @@ st.code("from numpy import random\nx = random.randint(100)\nprint(f'Random numbe
 x = random.randint(100)
 st.text(f'Random number: {x}')
 
-st.text("Let's create a random dictionary with numpy")
-st.code("from numpy import random\nx = random.randint(100)\nprint(f'Random number: {x}')")
-x = random.randint(100)
-st.text(f'Random number: {x}')
+st.text("Let's create a random normal dictionary with numpy")
+
+x = random.normal(100, 10)
+st.text(f'Random number: {x}')  
