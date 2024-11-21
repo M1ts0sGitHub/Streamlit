@@ -9,13 +9,8 @@ st.text(f'Random number: {x}')
 
 st.text("Let's create a random normal dictionary with numpy")
 
-rl = np.random.normal(20, 0.5, size=100)
-rl = np.round(rl, 2)
+rl = np.random.binomial(20, 0.5, size=100)
 st.text(f'Random number: {rl}')
+#make a plot
+st.line_chart(rl)
 
-#plot a histogram
-st.header("Histogram")
-st.text("Let's plot a histogram with numpy")
-st.code("from numpy import random\nx = random.randint(100)\nprint(f'Random number: {x}')")
-x = np.random.randint(100)
-st.text(f'Random number: {x}')
