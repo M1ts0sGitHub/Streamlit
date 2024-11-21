@@ -13,4 +13,6 @@ rl = np.random.binomial(20, 0.5, size=100)
 st.text(f'Random number: {rl}')
 #make a plot
 st.line_chart(rl)
+#make a histogram
+st.bar_chart(rl)
 
