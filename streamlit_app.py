@@ -16,4 +16,4 @@ table = dict()
 for i in range(21):
     table[i] = np.count_nonzero(rl == i)
 st.table(table)
-st.bar_chart([table[i] for i in range(21)])
+st.bar_chart([table[i] for i in range(21)], use_container_width=True)
