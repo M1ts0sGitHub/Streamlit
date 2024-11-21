@@ -1,11 +1,8 @@
 import streamlit as st
 from numpy import random
-st.title('All kinds of Randomness')
-st.text('Lets see how many random distributions exist')
 
-
-
-st.text('Generate Random Number')
-st.code("from numpy import random\n \nx = random.randint(100)\n\nprint(f'Random number: {x}')")
+st.title('Random Number')
+st.text('Lets create a random number with numpy')
+st.code("from numpy import random\nx = random.randint(100)\nprint(f'Random number: {x}')")
 x = random.randint(100)
 st.text(f'Random number: {x}')
