@@ -3,13 +3,13 @@ import numpy as np
 
 st.title('Random Number')
 st.text("Let's create a random number with numpy")
-st.code("from numpy import random\nx = random.randint(100)\nprint(f'Random number: {x}')")
+st.code("from numpy import random\nx = random.randint(1000)\nprint(f'Random number: {x}')")
 x = np.random.randint(100)
 st.text(f'Random number: {x}')
 
 st.text("Let's create a random normal dictionary with numpy")
 
-rl = np.random.binomial(20, 0.5, size=100)
+rl = np.random.binomial(20, 0.5, size=1000)
 st.text(' '.join(f'{i:02}' for i in rl))
 st.text("Let's create a table and a histogram with the random list")
 table = dict()
