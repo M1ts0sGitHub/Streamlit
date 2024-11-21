@@ -1,6 +1,6 @@
 import streamlit as st
 import numpy as np
-# import matplotlib.pyplot as plt
+
 
 st.title('Random Number')
 st.text("Let's create a random number with numpy")
@@ -18,14 +18,3 @@ for i in range(21):
     table[i] = np.count_nonzero(rl == i)
 st.table(table)
 st.bar_chart([table[i] for i in range(21)], use_container_width=True)
-
-# Create some data
-x = [1, 2, 3, 4, 5]
-y = [10, 20, 30, 40, 50]
-
-# Create a plot
-# fig, ax = plt.subplots()00
-# ax.plot(x, y)
-
-# Display the plot in Streamlit
-# st.pyplot(fig)
