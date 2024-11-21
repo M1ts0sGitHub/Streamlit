@@ -10,7 +10,7 @@ st.text(f'Random number: {x}')
 st.text("Let's create a random normal dictionary with numpy")
 
 rl = np.random.binomial(20, 0.5, size=100)
-st.text(f'Random number: {rl}')
+st.text(' '.join(f'{i:02}' for i in rl))
 st.text("Let's create a table and a histogram with the random list")
 table = dict()
 for i in range(21):
