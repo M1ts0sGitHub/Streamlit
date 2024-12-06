@@ -39,9 +39,9 @@ def scrape_website(url):
 
 if __name__ == "__main__":
     today = date.today().strftime("%d/%m/%Y")  # Format: DD/MM/YYYY
-    st.header(f'Rizoscraper - {today}')
+    st.header(f'Rizoscraper --- {today}')
 
-    with st.expander("Rizoscraper - about"):
+    with st.expander("About Rizoscraper"):
         st.image('https://www.rizospastis.gr/images/rizospastis_bigger_logo.png')
         st.write("Welcome to our site! We leverage the power of Python to bring you the latest news articles from Rizospastis.gr. Our custom scraper, built with BeautifulSoup and requests, efficiently gathers specific articles from Rizospastis.gr. Using Streamlit, we present this curated content in a user-friendly and interactive format. Stay informed with our quick, daily, and streamlined news feed!")
     
