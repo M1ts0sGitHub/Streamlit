@@ -41,6 +41,10 @@ if __name__ == "__main__":
     today = date.today().strftime("%d/%m/%Y")  # Format: DD/MM/YYYY
     st.header(f'Rizoscraper - {today}')
 
+    with st.expander("Rizoscraper - about"):
+        st.write("This is the content inside the expander")
+    
+
     urls = [
         f"https://www.rizospastis.gr/columnPage.do?publDate={today}&columnId=161",
         f"https://www.rizospastis.gr/columnStory.do?publDate={today}&columnId=7401",
