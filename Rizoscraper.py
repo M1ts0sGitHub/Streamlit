@@ -19,7 +19,8 @@ def parse_html(html):
     target_div = soup.find('div', align='center', class_=lambda x: x and x.startswith('title'))
     if target_div:
         # Extract the content of the target div
-        content = [target_div.get_text(separator='\n', strip=True)]
+        st.subheader = [target_div.get_text(separator='\n', strip=True)]
+        content = ""
         # Extract all content below the target div
         for sibling in target_div.find_next_siblings():
             if 'footer' in sibling.get('class', []) and 'hidden-xs' in sibling.get('class', []):
@@ -28,7 +29,7 @@ def parse_html(html):
         text = '\n'.join(content)
     else:
         text = "No content found."
-    return text
+    st.text(text)
 
 def scrape_website(url):
     """Scrape text from the given website URL."""
@@ -52,7 +53,7 @@ if __name__ == "__main__":
     for url in url:
     # print(url)
         scraped_text = scrape_website(url)
-        print(scraped_text)
+        # print(scraped_text)
 
 
 # There are several options for deploying your Python script to run automatically every morning. Here are a few popular choices:
