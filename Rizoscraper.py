@@ -55,4 +55,11 @@ if __name__ == "__main__":
     
     for url in urls:
         scraped_text = scrape_website(url)
-        st.text(scraped_text)
+        st.markdown(
+        f"""
+        <div style="text-align: justify;">
+            {scraped_text}
+        </div>
+        """, 
+        unsafe_allow_html=True
+        )
