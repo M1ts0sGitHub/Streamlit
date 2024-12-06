@@ -39,7 +39,7 @@ def scrape_website(url):
 
 if __name__ == "__main__":
     today = date.today().strftime("%d/%m/%Y")  # Format: DD/MM/YYYY
-    st.header(f'Rizoscraper - {today})
+    st.header(f'Rizoscraper - {today}')
 
     url = [f"https://www.rizospastis.gr/columnPage.do?publDate={today}&columnId=161",
            f"https://www.rizospastis.gr/columnStory.do?publDate={today}&columnId=7401",
