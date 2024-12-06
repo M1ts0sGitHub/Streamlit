@@ -19,17 +19,16 @@ def parse_html(html):
     target_div = soup.find('div', align='center', class_=lambda x: x and x.startswith('title'))
     if target_div:
         # Extract the content of the target div
-        st.subheader(target_div.get_text(separator='\n', strip=True))
-        content = []
+        title = target_div.get_text(separator='\n', strip=True)
         # Extract all content below the target div
         for sibling in target_div.find_next_siblings():
             if 'footer' in sibling.get('class', []) and 'hidden-xs' in sibling.get('class', []):
                 break
             content.append(sibling.get_text(separator='\n', strip=True))
-        text = '\n'.join(content)
+        article = '\n'.join(content)
     else:
-        text = ""
-    return text
+        article = ""
+    return title, article
 
 def scrape_website(url):
     """Scrape text from the given website URL."""
@@ -46,20 +45,21 @@ if __name__ == "__main__":
         st.write("Welcome to our site! We leverage the power of Python to bring you the latest news articles from Rizospastis.gr. Our custom scraper, built with BeautifulSoup and requests, efficiently gathers specific articles from Rizospastis.gr. Using Streamlit, we present this curated content in a user-friendly and interactive format. Stay informed with our quick, daily, and streamlined news feed!")
     
 
-    urls = [
-        f"https://www.rizospastis.gr/columnPage.do?publDate={today}&columnId=161",
-        f"https://www.rizospastis.gr/columnStory.do?publDate={today}&columnId=7401",
-        f"https://www.rizospastis.gr/columnStory.do?publDate={today}&columnId=7124",
-        f"https://www.rizospastis.gr/columnPage.do?publDate={today}&columnId=662",
-        f"https://www.rizospastis.gr/columnPage.do?publDate={today}&columnId=8968",
-        f"https://www.rizospastis.gr/columnStory.do?publDate={today}&columnId=8609",
-        f"https://www.rizospastis.gr/columnStory.do?publDate={today}&columnId=9924",
-        f"https://www.rizospastis.gr/columnStory.do?publDate={today}&columnId=521",
-        f"https://www.rizospastis.gr/columnStory.do?publDate={today}&columnId=9244"
+    urls = [(f"https://www.rizospastis.gr/columnPage.do?publDate={today}&columnId=161","Από μέρα σε μέρα"),
+            (f"https://www.rizospastis.gr/columnStory.do?publDate={today}&columnId=7401","test"),
+            (f"https://www.rizospastis.gr/columnStory.do?publDate={today}&columnId=7124","test"),
+            (f"https://www.rizospastis.gr/columnPage.do?publDate={today}&columnId=662","test"),
+            (f"https://www.rizospastis.gr/columnPage.do?publDate={today}&columnId=8968","test"),
+            (f"https://www.rizospastis.gr/columnStory.do?publDate={today}&columnId=8609","test"),
+            (f"https://www.rizospastis.gr/columnStory.do?publDate={today}&columnId=9924","test"),
+            (f"https://www.rizospastis.gr/columnStory.do?publDate={today}&columnId=521","test"),
+            (f"https://www.rizospastis.gr/columnStory.do?publDate={today}&columnId=9244""test")
     ]
     
     for url in urls:
-        scraped_text = scrape_website(url)
+        title, article = scrape_website(url[0])
         if scraped_text:
-            st.markdown(f'<div style="text-align: justify;">{scraped_text}</div>', unsafe_allow_html=True)
+            st.subheader(url[1])
+            st.subheader(title)
+            st.markdown(f'<div style="text-align: justify;">{article}</div>', unsafe_allow_html=True)
             st.text("")
