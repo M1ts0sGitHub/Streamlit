@@ -1,5 +1,6 @@
 ### Rizoscraper 2024 ###
 
+import streamlit as st
 import requests
 from bs4 import BeautifulSoup
 from datetime import date
@@ -36,21 +37,22 @@ def scrape_website(url):
     return text
 
 if __name__ == "__main__":
-  today = date.today().strftime("%d/%m/%Y")  # Format: DD/MM/YYYY
-  print(today)
-  url = [f"https://www.rizospastis.gr/columnPage.do?publDate={today}&columnId=161",
-         f"https://www.rizospastis.gr/columnStory.do?publDate={today}&columnId=7401",
-         f"https://www.rizospastis.gr/columnStory.do?publDate={today}&columnId=7124",
-         f"https://www.rizospastis.gr/columnPage.do?publDate={today}&columnId=662",
-         f"https://www.rizospastis.gr/columnPage.do?publDate={today}&columnId=8968",
-         f"https://www.rizospastis.gr/columnStory.do?publDate={today}&columnId=8609",
-         f"https://www.rizospastis.gr/columnStory.do?publDate={today}&columnId=9924",
-         f"https://www.rizospastis.gr/columnStory.do?publDate={today}&columnId=521",
-         f"https://www.rizospastis.gr/columnStory.do?publDate={today}&columnId=9244"]
-  for url in url:
-    print(url)
-    scraped_text = scrape_website(url)
-    print(scraped_text)
+    today = date.today().strftime("%d/%m/%Y")  # Format: DD/MM/YYYY
+    st.header(f'Rizoscraper - {today})
+
+    url = [f"https://www.rizospastis.gr/columnPage.do?publDate={today}&columnId=161",
+           f"https://www.rizospastis.gr/columnStory.do?publDate={today}&columnId=7401",
+           f"https://www.rizospastis.gr/columnStory.do?publDate={today}&columnId=7124",
+           f"https://www.rizospastis.gr/columnPage.do?publDate={today}&columnId=662",
+           f"https://www.rizospastis.gr/columnPage.do?publDate={today}&columnId=8968",
+           f"https://www.rizospastis.gr/columnStory.do?publDate={today}&columnId=8609",
+           f"https://www.rizospastis.gr/columnStory.do?publDate={today}&columnId=9924",
+           f"https://www.rizospastis.gr/columnStory.do?publDate={today}&columnId=521",
+           f"https://www.rizospastis.gr/columnStory.do?publDate={today}&columnId=9244"]
+    for url in url:
+    # print(url)
+        scraped_text = scrape_website(url)
+        print(scraped_text)
 
 
 # There are several options for deploying your Python script to run automatically every morning. Here are a few popular choices:
