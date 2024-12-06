@@ -14,7 +14,7 @@ def fetch_html(url):
 def parse_html(html):
     """Parse the HTML content and extract text from and below <div align="center" class="title*">, excluding <div class="footer hidden-xs">."""
     soup = BeautifulSoup(html, 'html.parser')
-    content = ""
+    content = []
 
     # Find the specific <div align="center" with class starting with "title"
     target_div = soup.find('div', align='center', class_=lambda x: x and x.startswith('title'))
@@ -45,21 +45,21 @@ if __name__ == "__main__":
         st.image('https://www.rizospastis.gr/images/rizospastis_bigger_logo.png')
         st.write("Welcome to our site! We leverage the power of Python to bring you the latest news articles from Rizospastis.gr. Our custom scraper, built with BeautifulSoup and requests, efficiently gathers specific articles from Rizospastis.gr. Using Streamlit, we present this curated content in a user-friendly and interactive format. Stay informed with our quick, daily, and streamlined news feed!")
     
-
-    urls = [(f"https://www.rizospastis.gr/columnPage.do?publDate={today}&columnId=161","Από μέρα σε μέρα"),
-            (f"https://www.rizospastis.gr/columnStory.do?publDate={today}&columnId=7401","test"),
-            (f"https://www.rizospastis.gr/columnStory.do?publDate={today}&columnId=7124","test"),
-            (f"https://www.rizospastis.gr/columnPage.do?publDate={today}&columnId=662","test"),
-            (f"https://www.rizospastis.gr/columnPage.do?publDate={today}&columnId=8968","test"),
-            (f"https://www.rizospastis.gr/columnStory.do?publDate={today}&columnId=8609","test"),
-            (f"https://www.rizospastis.gr/columnStory.do?publDate={today}&columnId=9924","test"),
-            (f"https://www.rizospastis.gr/columnStory.do?publDate={today}&columnId=521","test"),
-            (f"https://www.rizospastis.gr/columnStory.do?publDate={today}&columnId=9244""test")
+    urls = [
+        (f"https://www.rizospastis.gr/columnPage.do?publDate={today}&columnId=161", "Από μέρα σε μέρα"),
+        (f"https://www.rizospastis.gr/columnStory.do?publDate={today}&columnId=7401", "test"),
+        (f"https://www.rizospastis.gr/columnStory.do?publDate={today}&columnId=7124", "test"),
+        (f"https://www.rizospastis.gr/columnPage.do?publDate={today}&columnId=662", "test"),
+        (f"https://www.rizospastis.gr/columnPage.do?publDate={today}&columnId=8968", "test"),
+        (f"https://www.rizospastis.gr/columnStory.do?publDate={today}&columnId=8609", "test"),
+        (f"https://www.rizospastis.gr/columnStory.do?publDate={today}&columnId=9924", "test"),
+        (f"https://www.rizospastis.gr/columnStory.do?publDate={today}&columnId=521", "test"),
+        (f"https://www.rizospastis.gr/columnStory.do?publDate={today}&columnId=9244", "test")
     ]
     
     for url in urls:
         title, article = scrape_website(url[0])
-        if scraped_text:
+        if article:
             st.subheader(url[1])
             st.subheader(title)
             st.markdown(f'<div style="text-align: justify;">{article}</div>', unsafe_allow_html=True)
