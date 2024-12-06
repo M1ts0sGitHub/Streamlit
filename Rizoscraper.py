@@ -67,6 +67,6 @@ if __name__ == "__main__":
     for url in urls:
         title, article = scrape_website(url[0])
         if article:
-            st.subheader(url[1] & " - " & title)
+            st.subheader(url[1] + " - " + title)
             st.markdown(f'<div style="text-align: justify;">{article}</div>', unsafe_allow_html=True)
             st.text("")
