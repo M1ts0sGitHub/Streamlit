@@ -28,7 +28,7 @@ def parse_html(html):
             content.append(sibling.get_text(separator='\n', strip=True))
         text = '\n'.join(content)
     else:
-        text = "No content found."
+        text = ""
     return text
 
 def scrape_website(url):
@@ -56,11 +56,4 @@ if __name__ == "__main__":
     for url in urls:
         scraped_text = scrape_website(url)
         if scraped_text:
-            st.markdown(
-            f"""
-            <div style="text-align: justify;">
-                {scraped_text}
-            </div>
-            """, 
-            unsafe_allow_html=True
-            )
+            st.markdown(f'<div style="text-align: justify;">{scraped_text}</div>', unsafe_allow_html=True)
