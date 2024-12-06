@@ -28,6 +28,7 @@ def parse_html(html):
             content.append(sibling.get_text(separator='\n', strip=True))
         article = '\n'.join(content)
     else:
+        title = ""
         article = ""
     return title, article
 
