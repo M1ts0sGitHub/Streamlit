@@ -14,6 +14,7 @@ def fetch_html(url):
 def parse_html(html):
     """Parse the HTML content and extract text from and below <div align="center" class="title*">, excluding <div class="footer hidden-xs">."""
     soup = BeautifulSoup(html, 'html.parser')
+    content = ""
 
     # Find the specific <div align="center" with class starting with "title"
     target_div = soup.find('div', align='center', class_=lambda x: x and x.startswith('title'))
