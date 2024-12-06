@@ -58,9 +58,7 @@ if __name__ == "__main__":
     
     
     st.title('Rizoscraper')
-    
-    with st.expander("About Rizoscraper"):
-        st.write("Welcome to our site! We leverage the power of Python to bring you the latest news articles from Rizospastis.gr. Our custom scraper, built with BeautifulSoup and requests, efficiently gathers specific articles from Rizospastis.gr. Using Streamlit, we present this curated content in a user-friendly and interactive format. Stay informed with our quick, daily, and streamlined news feed!")
+    st.write("Welcome to our site! We leverage the power of Python to bring you the latest news articles from Rizospastis.gr. Our custom scraper, built with BeautifulSoup and requests, efficiently gathers specific articles from Rizospastis.gr. Using Streamlit, we present this curated content in a user-friendly and interactive format. Stay informed with our quick, daily, and streamlined news feed!")
 
     st.text("")
     st.header(f'{today} - Articles of Rizospastis.gr')
