@@ -48,11 +48,14 @@ if __name__ == "__main__":
     (f"https://www.rizospastis.gr/columnStory.do?publDate={today}&columnId=7401", "Η 'Αποψη μας"),
     (f"https://www.rizospastis.gr/columnStory.do?publDate={today}&columnId=7124", "Αποκαλυπτικά"),
     (f"https://www.rizospastis.gr/columnPage.do?publDate={today}&columnId=662", "test"),
-    (f"https://www.rizospastis.gr/columnPage.do?publDate={today}&columnId=8968", "test"),
+    (f"https://www.rizospastis.gr/columnPage.do?publDate={today}&columnId=9046", "Επιστήμη"),
+    (f"https://www.rizospastis.gr/columnPage.do?publDate={today}&columnId=8968", "Πολιτισμός"),
     (f"https://www.rizospastis.gr/columnStory.do?publDate={today}&columnId=8609", "test"),
-    (f"https://www.rizospastis.gr/columnStory.do?publDate={today}&columnId=9924", "test"),
-    (f"https://www.rizospastis.gr/columnStory.do?publDate={today}&columnId=521", "test"),
-    (f"https://www.rizospastis.gr/columnStory.do?publDate={today}&columnId=9244", "test")
+    (f"https://www.rizospastis.gr/columnStory.do?publDate={today}&columnId=9924", "Σφήνες"),
+    (f"https://www.rizospastis.gr/columnStory.do?publDate={today}&columnId=521", "Πατριδογνωμόνιο"),
+    (f"https://www.rizospastis.gr/columnStory.do?publDate={today}&columnId=9244", "Δαχτυλικά Αποτυπώματα"),
+    (f"https://www.rizospastis.gr/columnPage.do?publDate=7/12/2024&columnId=9502", "Παιδί και Οικογένεια"),
+    (f"https://www.rizospastis.gr/sketches.do?publDate=7/12/2024&id=19891","Σκίτσα")
     ]
 
     
