@@ -68,4 +68,5 @@ if __name__ == "__main__":
         if article:
             with st.expander(url[1]):
                 st.write(title)
+                st.write(url[0])
                 st.markdown(f'<div style="text-align: justify;">{article}</div>', unsafe_allow_html=True)
