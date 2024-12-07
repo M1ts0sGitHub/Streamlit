@@ -45,17 +45,19 @@ if __name__ == "__main__":
 
     urls = [
     (f"https://www.rizospastis.gr/columnPage.do?publDate={today}&columnId=161", "Από μέρα σε μέρα"),
+    (f"https://www.rizospastis.gr/columnStory.do?publDate={today}&columnId=7389", "Σαν Σήμερα"),
     (f"https://www.rizospastis.gr/columnStory.do?publDate={today}&columnId=7401", "Η 'Αποψη μας"),
     (f"https://www.rizospastis.gr/columnStory.do?publDate={today}&columnId=7124", "Αποκαλυπτικά"),
-    (f"https://www.rizospastis.gr/columnPage.do?publDate={today}&columnId=662", "test"),
+    (f"https://www.rizospastis.gr/columnPage.do?publDate={today}&columnId=662", "Επιστήμη"),
     (f"https://www.rizospastis.gr/columnPage.do?publDate={today}&columnId=9046", "Επιστήμη"),
     (f"https://www.rizospastis.gr/columnPage.do?publDate={today}&columnId=8968", "Πολιτισμός"),
-    (f"https://www.rizospastis.gr/columnStory.do?publDate={today}&columnId=8609", "test"),
+    (f"https://www.rizospastis.gr/columnStory.do?publDate={today}&columnId=8609", "Κινηματογράφος"),
+    (f"https://www.rizospastis.gr/columnPage.do?publDate={today}&columnId=8966","Βιβλίο"),
+    (f"https://www.rizospastis.gr/columnPage.do?publDate=23/11/2024&columnId=8403","Πόλεμος"),
     (f"https://www.rizospastis.gr/columnStory.do?publDate={today}&columnId=9924", "Σφήνες"),
     (f"https://www.rizospastis.gr/columnStory.do?publDate={today}&columnId=521", "Πατριδογνωμόνιο"),
     (f"https://www.rizospastis.gr/columnStory.do?publDate={today}&columnId=9244", "Δαχτυλικά Αποτυπώματα"),
-    (f"https://www.rizospastis.gr/columnPage.do?publDate=7/12/2024&columnId=9502", "Παιδί και Οικογένεια"),
-    (f"https://www.rizospastis.gr/sketches.do?publDate=7/12/2024&id=19891","Σκίτσα")
+    (f"https://www.rizospastis.gr/columnPage.do?publDate={today}&columnId=9502", "Παιδί και Οικογένεια")
     ]
 
     
@@ -71,5 +73,5 @@ if __name__ == "__main__":
         if article:
             with st.expander(url[1]):
                 st.write(title)
-                st.write(url[0])
                 st.markdown(f'<div style="text-align: justify;">{article}</div>', unsafe_allow_html=True)
+                st.write(url[0])
