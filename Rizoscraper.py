@@ -78,6 +78,7 @@ def main():
                 with st.expander(url[1]):
                     st.write(title)
                     st.markdown(f'<div style="text-align: justify;">{article}</div>', unsafe_allow_html=True)
+                    st.text("")
                     st.write(url[0])
         except Exception as e:
             st.warning(f"Could not fetch article from {url[0]}: {str(e)}")
